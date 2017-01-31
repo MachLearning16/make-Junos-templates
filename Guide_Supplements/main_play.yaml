@@ -1,6 +1,6 @@
 ---
 
-- name: This is the main playbook which contains many roles (plays)
+- name: This is the main playbook which contains a play or multiple plays
   hosts: vsrx1  
   connection: local
   gather_facts: no
