@@ -1,6 +1,6 @@
 ---
 
-- name: This is the main playbook which contains many roles (plays)
+- name: This is the main playbook which may contain play(s)
   hosts: vsrx1
   connection: local
   gather_facts: no
@@ -13,26 +13,3 @@
       template: 
         src: "vsrx_template.j2"
         dest: "./test.conf"
- #     with_items:
-  #      interfaces
-        
-    - name: load config onto device
-      junos_config:
-        src: "test.conf"
-        provider: "{{ credential }}"
-      
-#      junos_template: 
-#        src: vsrx_template.j2
-#        comment: Config using jinja 2 file 
-    
-#    - name: Overwrite the config
-#        src: vsrx_template.j2
-#        action: overwrite
-      
-      
-      
-#- include: ip_interface_setup.yaml
-#- include: routing_setup.yaml
-#- include: vlan_setup.yaml
-#- include: port_security_setup.yaml
-- include: save_output.yaml
