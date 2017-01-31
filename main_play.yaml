@@ -1,0 +1,15 @@
+---
+
+- name: This is the main playbook which may contain play(s)
+  hosts: vsrx1
+  connection: local
+  gather_facts: no
+  
+  vars_files:
+    - vsrx_template_vars.yml
+  
+  tasks:
+    - name: Generate config files
+      template: 
+        src: "vsrx_template.j2"
+        dest: "./test.conf"
