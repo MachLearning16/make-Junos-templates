@@ -1,0 +1,11 @@
+interfaces {
+{% for interface in interfaces %}
+    {{ interface.name }} {
+	    unit 0 {
+		    family inet {
+	            address {{ interface.ip }}/{{ interface.mask}};
+		    }
+	    }
+    }
+{% endfor %}
+}
